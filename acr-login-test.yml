@@ -8,7 +8,7 @@ pool:
 
 variables:
   containerRegistry: 'myContainerRegistryServiceConnection'  # Replace with your actual ACR service connection name
-  acrName: '<your-acr-name>'  # Replace with your actual ACR name
+  acrName: 'petclinic'  # Replace with your actual ACR name
 
 stages:
 - stage: TestACRLogin
