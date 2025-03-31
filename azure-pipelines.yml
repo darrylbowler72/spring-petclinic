@@ -41,7 +41,7 @@ stages:
     - task: DockerCompose@0
       displayName: 'Build and Push Docker Images'
       inputs:
-        containerRegistry: $(containerRegistry)
+        containerRegistry: myContainerRegistryServiceConnection
         dockerComposeFile: 'docker-compose.yml'
         action: 'BuildAndPush'
         projectName: 'springpetclinic'  
