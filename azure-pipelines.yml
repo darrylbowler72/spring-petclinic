@@ -44,6 +44,6 @@ stages:
         containerRegistry: $(containerRegistry)
         dockerComposeFile: 'docker-compose.yml'
         action: 'BuildAndPush'
-        projectName: 'spring_petclinic'  
+        projectName: 'springpetclinic'  
         additionalImageTags: |
           $(Build.BuildId)
