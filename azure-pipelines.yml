@@ -8,6 +8,7 @@ pool:
 
 variables:
   imageName: 'petclinic'
+  containerRegistry: 'myContainerRegistryServiceConnection'
 
 stages:
 - stage: Build
@@ -37,12 +38,11 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/target/surefire-reports/*.xml'
 
-    - task: Docker@2
+    - task: DockerCompose@0
+      displayName: 'Build and Push Docker Images'
       inputs:
-        containerRegistry: myContainerRegistryServiceConnection
-        repository: '$(imageName)'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: |
+        containerRegistry: $(containerRegistry)
+        dockerComposeFile: 'docker-compose.yml'
+        action: 'BuildAndPush'
+        additionalImageTags: |
           $(Build.BuildId)
-        buildContext: '$(System.DefaultWorkingDirectory)/'
