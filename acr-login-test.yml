@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  containerRegistry: '<your-acr-service-connection>'  # Replace with your actual ACR service connection name
+  containerRegistry: 'myContainerRegistryServiceConnection'  # Replace with your actual ACR service connection name
   acrName: '<your-acr-name>'  # Replace with your actual ACR name
 
 stages:
