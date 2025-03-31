@@ -19,7 +19,7 @@ stages:
       inputs:
         versionSpec: '17'
         jdkArchitectureOption: 'x64'
-        jdkSource: 'PreInstalled'
+        jdkSourceOption: 'PreInstalled'
       displayName: 'Set Java 17'
 
     - script: java -version
